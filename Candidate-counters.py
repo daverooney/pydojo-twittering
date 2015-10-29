@@ -2,6 +2,7 @@ import tweepy, time
 from tweepy import OAuthHandler
 from TwitterKeys import *
 from collections import Counter
+from pprint import pprint
 
 auth = tweepy.OAuthHandler(APIKEY, APISECRET)
 auth.set_access_token(ACCESSTOKEN, ACCESSSECRET)
@@ -18,14 +19,14 @@ try:
     for cand in CandidateList:
       tweets = api.search(cand)
       for t in tweets:
-        for word in t.text:
+        for word in t.text.split(' '):
           if word not in stopwords:
             CandCounters[cand][word] += 1
       time.sleep(6)
 #      CandCounters[cand] = CandCounters[cand].most_common(5000)
-      print cand, CandCounters[cand].most_common(10)
+      pprint cand, CandCounters[cand].most_common(5)
 except:
   for cand in CandidateList:
-    print cand, CandCounters[cand].most_common(10)
+    pprint cand, CandCounters[cand].most_common(10)
   
 
