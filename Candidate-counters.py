@@ -22,7 +22,7 @@ try:
           if word not in stopwords:
             CandCounters[cand][word] += 1
       time.sleep(6)
-      CandCounters[cand] = CandCounters[cand].most_common(5000)
+#      CandCounters[cand] = CandCounters[cand].most_common(5000)
       print cand, CandCounters[cand].most_common(10)
 except:
   for cand in CandidateList:
