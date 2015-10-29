@@ -24,9 +24,8 @@ try:
             CandCounters[cand][word] += 1
       time.sleep(6)
 #      CandCounters[cand] = CandCounters[cand].most_common(5000)
-      pprint CandCounters[cand].most_common(5)
+      pprint(CandCounters[cand].most_common(5))
 except:
   for cand in CandidateList:
-    pprint CandCounters[cand].most_common(10)
+    pprint(CandCounters[cand].most_common(10))
   
-
