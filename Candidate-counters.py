@@ -3,6 +3,7 @@ from tweepy import OAuthHandler
 from TwitterKeys import *
 from collections import Counter
 
+auth = tweepy.OAuthHandler(APIKEY, APISECRET)
 auth.set_access_token(ACCESSTOKEN, ACCESSSECRET)
 api = tweepy.API(auth)
 
