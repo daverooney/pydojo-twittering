@@ -19,7 +19,7 @@ try:
     for cand in CandidateList:
       tweets = api.search(cand)
       for t in tweets:
-        for word in t.text.split(' '):
+        for word in t.text.split():
           if word not in stopwords:
             CandCounters[cand][word] += 1
       time.sleep(6)
